@@ -195,7 +195,7 @@ if __name__ == '__main__':
 
     tconf = TrainerConfig(model_type=model_type, max_epochs=n_epoch, batch_size=batch_size,
                           learning_rate=lr_init, lr_decay=True, lr_final=lr_final, betas=betas, eps=eps,
-                          warmup_tokens=warmup_tokens, final_tokens=n_epoch*len(train_dataset)*ctx_len, num_workers=num_workers, epoch_save_frequency=epoch_save_frequency, epoch_save_path=epoch_save_path)
+                          warmup_tokens=warmup_tokens, final_tokens=299892736000, num_workers=num_workers, epoch_save_frequency=epoch_save_frequency, epoch_save_path=epoch_save_path)
     m_cfg = types.SimpleNamespace()
     m_cfg.model_type = model_type
     m_cfg.n_layer = n_layer
