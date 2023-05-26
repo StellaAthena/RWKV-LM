@@ -145,10 +145,11 @@ if EXPRESS_PILE_MODE:
 
 ### misc stuffs ########################################################################################
 
-if LOAD_MODEL and EPOCH_BEGIN > 0: # we are not saving gradients, so let's have some warmup if we load a model
-    warmup_tokens = 50 * ctx_len * batch_size // NUM_GPUS
-else:
-    warmup_tokens = 0
+#if LOAD_MODEL and EPOCH_BEGIN > 0: # we are not saving gradients, so let's have some warmup if we load a model
+#    warmup_tokens = 50 * ctx_len * batch_size // NUM_GPUS
+#else:
+#    warmup_tokens = 0
+warmup_tokens = int(15000000000 / (ctx_len * batch_size)) * (ctx_len * batch_size)
 
 betas = (0.9, 0.99) # set betas = (0.9, 0.999) if your model has been trained for a while
 eps = 1e-8
