@@ -137,9 +137,7 @@ class Trainer(LightningLite):
                     lr_final_factor = config.lr_final / config.learning_rate
                     if self.tokens < config.warmup_tokens:
                         # linear warmup
-                        lr_mult = lr_final_factor + \
-                            (1 - lr_final_factor) * float(self.tokens) / \
-                            float(config.warmup_tokens)
+                        lr_mult = 1
                         progress = 0
                     else:
                         # exponential learning rate decay
